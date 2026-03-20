@@ -1,0 +1,177 @@
+2026-03-20 10:46:08,389 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 10:46:08,390 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773983768390&recvWindow=5000&signature=10d3b84cc201445ac7ed91d47d733143cab5299bb103dc86a63745354e44a053
+2026-03-20 10:46:11,084 | INFO | bot.client | API response | status_code=401 | body={"code":-2014,"msg":"API-key format invalid."}
+2026-03-20 10:46:11,086 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -2014: API-key format invalid.
+2026-03-20 10:47:53,058 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 10:47:53,058 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773983873058&recvWindow=5000&signature=debf4e9c58685ccdfdc107072263fe25929edcc812b0e011ee5e41525b192d57
+2026-03-20 10:47:54,454 | INFO | bot.client | API response | status_code=401 | body={"code":-2014,"msg":"API-key format invalid."}
+2026-03-20 10:47:54,454 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -2014: API-key format invalid.
+2026-03-20 10:49:47,096 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 10:49:47,097 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773983987097&recvWindow=5000&signature=1b3af35e143de67d867055087bd6917dd526de522fbe30d6f9cf7176e44e0872
+2026-03-20 10:49:48,941 | INFO | bot.client | API response | status_code=401 | body={"code":-2014,"msg":"API-key format invalid."}
+2026-03-20 10:49:48,942 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -2014: API-key format invalid.
+2026-03-20 12:01:09,488 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:01:09,489 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773988269489&recvWindow=5000&signature=d2c83954d227e3e01e3adbcc7f5538017272d7b9048a84d7dbd357cbafed7456
+2026-03-20 12:01:10,122 | INFO | bot.client | API response | status_code=401 | body={"code":-2015,"msg":"Invalid API-key, IP, or permissions for action"}
+2026-03-20 12:01:10,123 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -2015: Invalid API-key, IP, or permissions for action
+2026-03-20 12:03:34,174 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:03:34,175 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773988414175&recvWindow=5000&signature=3da39cdcb792bfff5b730dd1797e2836ae4f4ab1847323c53c25a520d066288d
+2026-03-20 12:03:34,684 | INFO | bot.client | API response | status_code=401 | body={"code":-2015,"msg":"Invalid API-key, IP, or permissions for action"}
+2026-03-20 12:03:34,685 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -2015: Invalid API-key, IP, or permissions for action
+2026-03-20 12:13:00,599 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:13:00,599 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&newOrderRespType=RESULT&timestamp=1773988980599&recvWindow=5000&signature=3432b16b635b9a2e63b249e4db4111dd9ce6373c0f2743063058b63acdf2c95f
+2026-03-20 12:13:01,393 | INFO | bot.client | API response | status_code=400 | body={"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-03-20 12:13:01,394 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -4164: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-20 12:13:50,981 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:13:50,981 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773989030981&recvWindow=5000&signature=ecd977ff24543e54ea267be62f92f8f3570f440783859ca0959a6a0dda012541
+2026-03-20 12:13:52,776 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893431749,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"F14XD1Z8zdZF9U4G3KUZBh","price":"0.00","avgPrice":"70390.10000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"140.78020","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773989033131}
+2026-03-20 12:15:06,310 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 12:15:06,310 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773989106310&recvWindow=5000&signature=5b73320455c4872bb6f37be8077f9bd4a10e8f9c2982549f1b2ae23c1811592e
+2026-03-20 12:15:07,784 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893446785,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"OyH4CTRj5fLNWKTxZa94H4","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773989108151}
+2026-03-20 12:15:07,784 | INFO | bot.client | API request | method=GET | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&orderId=12893446785&timestamp=1773989107784&recvWindow=5000&signature=10d80f9cc6aaf57d24bcd9ac861750d32b1c8aaebf14fb92bd580a9926c7d625
+2026-03-20 12:15:07,959 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893446785,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"OyH4CTRj5fLNWKTxZa94H4","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"time":1773989108151,"updateTime":1773989108151}
+2026-03-20 12:17:30,474 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 12:17:30,474 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773989250474&recvWindow=5000&signature=02b9d0e619c542b908a3863828c5a21f7af3163d1868201c04bfa1c27c8052ad
+2026-03-20 12:17:32,288 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893477290,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"WuhU2nxuNy06iGEqjjDh6t","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773989252627}
+2026-03-20 12:17:32,289 | INFO | bot.client | API request | method=GET | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&orderId=12893477290&timestamp=1773989252289&recvWindow=5000&signature=ef871210ac6913a9b27069f64e420ffb92a92b232557d257c3fd38c4bd308ab0
+2026-03-20 12:17:32,462 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893477290,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"WuhU2nxuNy06iGEqjjDh6t","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"time":1773989252611,"updateTime":1773989252627}
+2026-03-20 12:38:18,924 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:38:18,924 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773990498924&recvWindow=5000&signature=2e16c5cbfdba91761c3335dc10f8ccab0626ca370727055dbadecf41acaf338b
+2026-03-20 12:38:23,764 | INFO | bot.client | API response | status_code=400 | body={"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-03-20 12:38:23,765 | ERROR | __main__ | Binance API error
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 62, in main
+    response = place_order(client, validated_input)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\orders.py", line 26, in place_order
+    response = client.create_order(payload)
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 99, in create_order
+    return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\client.py", line 91, in _request
+    raise BinanceAPIError(f"Binance API error {code}: {msg}")
+bot.exceptions.BinanceAPIError: Binance API error -1021: Timestamp for this request is outside of the recvWindow.
+2026-03-20 12:40:10,482 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:40:10,482 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773990610482&recvWindow=5000&signature=73ca444b447efa3c76ee56a574a5972e222bbe0191270b220725d7a4266162a7
+2026-03-20 12:40:10,979 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893769925,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"qcTPo6OB5B8zmR1zmBgJE8","price":"0.00","avgPrice":"70221.00000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"140.44200","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773990611327}
+2026-03-20 12:42:31,517 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 12:42:31,518 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773990751517&recvWindow=5000&signature=82a758bc87e0870db008e66d6ca95170e793510dbcfb7968d12bfcc58a0c257e
+2026-03-20 12:42:34,237 | INFO | bot.client | API response | status_code=200 | body={"orderId":12893802188,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"j6uXM8jALV7AbgdVSSYykS","price":"0.00","avgPrice":"70301.60000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"140.60320","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773990754587}
+2026-03-20 12:52:28,199 | ERROR | __main__ | Validation failed
+Traceback (most recent call last):
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\cli.py", line 51, in main
+    validated_input = validate_order_input(
+        symbol=args.symbol,
+    ...<3 lines>...
+        price=args.price,
+    )
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\validators.py", line 76, in validate_order_input
+    "side": normalize_side(side),
+            ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Palak\Downloads\trading_bot_project\trading_bot_project\bot\validators.py", line 23, in normalize_side
+    raise ValidationError("Invalid side. Use BUY or SELL.")
+bot.exceptions.ValidationError: Invalid side. Use BUY or SELL.
+2026-03-20 13:05:58,059 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:05:58,666 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992159027&recvWindow=10000&signature=7eb5311382d7e9f316b76d8f99eb4317301e2d67731acb68b1b3cd6796346975
+2026-03-20 13:05:58,924 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894102563,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"9SrfxRzTKXZI3l8E3AyJyC","price":"0.00","avgPrice":"70580.50000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"141.16100","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992159279}
+2026-03-20 13:06:06,667 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 13:06:07,164 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773992167491&recvWindow=10000&signature=123c0608f3572e3592f11df69e82b6bc5251a74e4868fc798449580a4a32ddf5
+2026-03-20 13:06:07,471 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894104608,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"bLqnI7CkOmmP09pR9WEMCP","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992167771}
+2026-03-20 13:06:07,676 | INFO | bot.client | API request | method=GET | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&orderId=12894104608&timestamp=1773992168037&recvWindow=10000&signature=afade8ecb812c4ea3098c03faec1444f2e53c52a93860b912ea78774502a6604
+2026-03-20 13:06:07,881 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894104608,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"bLqnI7CkOmmP09pR9WEMCP","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"time":1773992167751,"updateTime":1773992167771}
+2026-03-20 13:06:15,817 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:06:16,587 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order/test | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992176911&recvWindow=10000&signature=59a0868b23b0d819f10ece66027ae5b761cd80b5f670360464d8c15b5690d60a
+2026-03-20 13:06:16,791 | INFO | bot.client | API response | status_code=200 | body={"orderId":0,"symbol":"","status":"","clientOrderId":"","price":"","origQty":"","executedQty":"","cumQuote":"","timeInForce":"","type":"","reduceOnly":false,"closePosition":false,"side":"","stopPrice":"","priceProtect":false,"origType":"","updateTime":0}
+2026-03-20 13:15:33,904 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:15:34,873 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order/test | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992735235&recvWindow=10000&signature=7ff6a2741a1a643d39bfa996d34444b6fe2438d20fa5c74d45076667c875603e
+2026-03-20 13:15:35,041 | INFO | bot.client | API response | status_code=200 | body={"orderId":0,"symbol":"","status":"","clientOrderId":"","price":"","origQty":"","executedQty":"","cumQuote":"","timeInForce":"","type":"","reduceOnly":false,"closePosition":false,"side":"","stopPrice":"","priceProtect":false,"origType":"","updateTime":0}
+2026-03-20 13:17:35,604 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:17:37,039 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order/test | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992857414&recvWindow=10000&signature=4b0c49bd4220b68818c10908cd809f9422b34be5bae3898913dc174709e15cdc
+2026-03-20 13:17:37,258 | INFO | bot.client | API response | status_code=200 | body={"orderId":0,"symbol":"","status":"","clientOrderId":"","price":"","origQty":"","executedQty":"","cumQuote":"","timeInForce":"","type":"","reduceOnly":false,"closePosition":false,"side":"","stopPrice":"","priceProtect":false,"origType":"","updateTime":0}
+2026-03-20 13:17:56,467 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 13:17:58,338 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order/test | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773992878691&recvWindow=10000&signature=20b1dd094a7461b2d0bd56607588859646dd1f43f33ca4f10150ee82c790c9bf
+2026-03-20 13:17:58,555 | INFO | bot.client | API response | status_code=200 | body={"orderId":0,"symbol":"","status":"","clientOrderId":"","price":"","origQty":"","executedQty":"","cumQuote":"","timeInForce":"","type":"","reduceOnly":false,"closePosition":false,"side":"","stopPrice":"","priceProtect":false,"origType":"","updateTime":0}
+2026-03-20 13:18:11,903 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:18:13,294 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order/test | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992893691&recvWindow=10000&signature=7c5acff60c14436266fc95b3fc52a153c39953839773e351a7d630e36124dbec
+2026-03-20 13:18:13,492 | INFO | bot.client | API response | status_code=200 | body={"orderId":0,"symbol":"","status":"","clientOrderId":"","price":"","origQty":"","executedQty":"","cumQuote":"","timeInForce":"","type":"","reduceOnly":false,"closePosition":false,"side":"","stopPrice":"","priceProtect":false,"origType":"","updateTime":0}
+2026-03-20 13:18:14,065 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:18:14,276 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992894670&recvWindow=10000&signature=feda2bf18419b297093b2190cccc41b4d439887e8683ffb47775ec55b34d67e6
+2026-03-20 13:18:14,825 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894250102,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"lwWTmxWzb2GhflVbqvxPAY","price":"0.00","avgPrice":"70810.00000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"141.62000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992895149}
+2026-03-20 13:18:15,490 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 13:18:15,956 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773992896319&recvWindow=10000&signature=234d71e07c8e5811145d3f43289a1781a6f2fbf1708119cf131a48e454fcd7f8
+2026-03-20 13:18:16,226 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894250419,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"BbDo1ARD1hBSw7EHK7TGir","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992896547}
+2026-03-20 13:18:16,462 | INFO | bot.client | API request | method=GET | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&orderId=12894250419&timestamp=1773992896802&recvWindow=10000&signature=3cfc0aaa5830167ab5582bab8361abab770fc20f365e2d792ca806614d89a3a0
+2026-03-20 13:18:16,667 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894250419,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"BbDo1ARD1hBSw7EHK7TGir","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"time":1773992896547,"updateTime":1773992896547}
+2026-03-20 13:18:57,184 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.002', 'newOrderRespType': 'RESULT'}
+2026-03-20 13:18:58,753 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.002&newOrderRespType=RESULT&timestamp=1773992939075&recvWindow=10000&signature=9e4fc6b42adc05ade1f37d98e1c825c335ffc3cf9bf8b87bcb0d078d2e84ff78
+2026-03-20 13:18:59,062 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894259132,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"geEx908EbZlJC4UIHksrwx","price":"0.00","avgPrice":"70810.00000","origQty":"0.002","executedQty":"0.002","cumQty":"0.002","cumQuote":"141.62000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992939351}
+2026-03-20 13:18:59,770 | INFO | __main__ | Validated order payload: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.002', 'newOrderRespType': 'RESULT', 'timeInForce': 'GTC', 'price': '80000'}
+2026-03-20 13:19:00,289 | INFO | bot.client | API request | method=POST | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.002&newOrderRespType=RESULT&timeInForce=GTC&price=80000&timestamp=1773992940648&recvWindow=10000&signature=8ef0fcf6ff23c056d60e26d74656f144faf9c30f082039ae8b514091d9becb7f
+2026-03-20 13:19:00,596 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894259300,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"9SbQ0l8hvmZ5WvSNkkrwIQ","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1773992940863}
+2026-03-20 13:19:01,112 | INFO | bot.client | API request | method=GET | url=https://testnet.binancefuture.com/fapi/v1/order | payload=symbol=BTCUSDT&orderId=12894259300&timestamp=1773992941466&recvWindow=10000&signature=15117079e16e70f03bfeec3089326d091a4aefd4fe38c89bc018f3f3f21662fe
+2026-03-20 13:19:01,313 | INFO | bot.client | API response | status_code=200 | body={"orderId":12894259300,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"9SbQ0l8hvmZ5WvSNkkrwIQ","price":"80000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"time":1773992940853,"updateTime":1773992940863}
