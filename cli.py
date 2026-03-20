@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from colorama import Fore, Style, init
 import argparse
 import logging
 import sys
@@ -10,7 +10,7 @@ from bot.exceptions import BinanceAPIError, NetworkError, ValidationError
 from bot.logging_config import setup_logging
 from bot.orders import build_order_payload, place_order
 from bot.validators import validate_order_input
-
+init(autoreset=True)
 logger = logging.getLogger(__name__)
 
 
@@ -32,31 +32,30 @@ def parse_args() -> argparse.Namespace:
 
 
 def print_order_summary(validated_input: dict[str, str], test: bool) -> None:
-    print("\n=== ORDER REQUEST SUMMARY ===")
-    print(f"Symbol      : {validated_input['symbol']}")
-    print(f"Side        : {validated_input['side']}")
-    print(f"Order Type  : {validated_input['type']}")
-    print(f"Quantity    : {validated_input['quantity']}")
-    print(f"Price       : {validated_input.get('price', 'N/A')}")
-    print(f"Mode        : {'TEST (no execution)' if test else 'LIVE TESTNET'}")
+    print(Fore.CYAN + "\n=== ORDER REQUEST SUMMARY ===")
+    print(Fore.YELLOW + f"Symbol      : {validated_input['symbol']}")
+    print(Fore.YELLOW + f"Side        : {validated_input['side']}")
+    print(Fore.YELLOW + f"Order Type  : {validated_input['type']}")
+    print(Fore.YELLOW + f"Quantity    : {validated_input['quantity']}")
+    print(Fore.YELLOW + f"Price       : {validated_input.get('price', 'N/A')}")
+    print(Fore.YELLOW + f"Mode        : {'TEST (no execution)' if test else 'LIVE TESTNET'}")
 
 
 def print_order_response(response: dict) -> None:
-    print("\n=== ORDER RESPONSE ===")
+    print(Fore.CYAN + "\n=== ORDER RESPONSE ===")
 
     if "message" in response:
-        print(response["message"])
-        print("\nPayload:")
+        print(Fore.GREEN + response["message"])
+        print(Fore.MAGENTA + "\nPayload:")
         print(pformat(response.get("payload")))
         return
 
-    print(f"Order ID    : {response.get('orderId', 'N/A')}")
-    print(f"Status      : {response.get('status', 'N/A')}")
-    print(f"Executed Qty: {response.get('executedQty', 'N/A')}")
-    print(f"Avg Price   : {response.get('avgPrice', 'N/A')}")
-    print("\nFull response:")
+    print(Fore.GREEN + f"Order ID    : {response.get('orderId', 'N/A')}")
+    print(Fore.GREEN + f"Status      : {response.get('status', 'N/A')}")
+    print(Fore.GREEN + f"Executed Qty: {response.get('executedQty', 'N/A')}")
+    print(Fore.GREEN + f"Avg Price   : {response.get('avgPrice', 'N/A')}")
+    print(Fore.MAGENTA + "\nFull response:")
     print(pformat(response))
-
 
 def main() -> int:
     log_path = setup_logging()
@@ -78,29 +77,30 @@ def main() -> int:
 
         response = place_order(client, validated_input, test=args.test)
         print_order_response(response)
-
-        print(f"\nSUCCESS: Order submitted successfully. Log file: {log_path}")
+        print(Fore.BLUE + "\nProcessing order...")
+        print(Fore.GREEN + f"\nSUCCESS: Order submitted successfully. Log file: {log_path}")
         return 0
 
     except ValidationError as exc:
         logger.exception("Validation failed")
-        print(f"\nFAILED: Validation error -> {exc}")
+        print(Fore.RED + f"\nFAILED: Validation error -> {exc}")
         return 1
     except BinanceAPIError as exc:
         logger.exception("Binance API error")
-        print(f"\nFAILED: Binance API error -> {exc}")
+        print(Fore.RED + f"\nFAILED: Binance API error -> {exc}")
+
         return 1
     except NetworkError as exc:
         logger.exception("Network failure")
-        print(f"\nFAILED: Network error -> {exc}")
+        print(Fore.RED + f"\nFAILED: Network error -> {exc}")
         return 1
     except ValueError as exc:
         logger.exception("Configuration error")
-        print(f"\nFAILED: Configuration error -> {exc}")
+        print(Fore.RED + f"\nFAILED: Configuration error -> {exc}")
         return 1
     except Exception as exc:
         logger.exception("Unexpected error")
-        print(f"\nFAILED: Unexpected error -> {exc}")
+        print(Fore.RED + f"\nFAILED: Unexpected error -> {exc}")
         return 1
 
 
