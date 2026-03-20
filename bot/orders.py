@@ -11,7 +11,7 @@ def build_order_payload(validated_input: dict[str, str]) -> dict[str, Any]:
         "side": validated_input["side"],
         "type": validated_input["type"],
         "quantity": validated_input["quantity"],
-        "newOrderRespType": "RESULT",  # helpful for MARKET fills
+        "newOrderRespType": "RESULT",
     }
 
     if validated_input["type"] == "LIMIT":
@@ -21,11 +21,24 @@ def build_order_payload(validated_input: dict[str, str]) -> dict[str, Any]:
     return payload
 
 
-def place_order(client: BinanceFuturesClient, validated_input: dict[str, str]) -> dict[str, Any]:
+def place_order(
+    client: BinanceFuturesClient,
+    validated_input: dict[str, str],
+    test: bool = False,
+) -> dict[str, Any]:
     payload = build_order_payload(validated_input)
+
+    if test:
+        client.create_test_order(payload)
+        return {
+            "message": "Test order successful (not executed).",
+            "payload": payload,
+        }
+
     response = client.create_order(payload)
 
-    # LIMIT orders may return NEW and avgPrice can be missing/0. Query once for a cleaner response.
+    # LIMIT orders may return NEW and avgPrice can be missing/0.
+    # Fetch once more for cleaner response.
     if response.get("orderId") and validated_input["type"] == "LIMIT":
         try:
             latest = client.get_order(validated_input["symbol"], int(response["orderId"]))

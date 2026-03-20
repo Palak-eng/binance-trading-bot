@@ -4,7 +4,6 @@ import hashlib
 import hmac
 import logging
 import os
-import time
 from typing import Any
 from urllib.parse import urlencode
 
@@ -30,16 +29,33 @@ class BinanceFuturesClient:
     ) -> None:
         self.api_key = api_key or os.getenv("BINANCE_API_KEY", "")
         self.api_secret = api_secret or os.getenv("BINANCE_API_SECRET", "")
-        self.base_url = (base_url or os.getenv("BINANCE_BASE_URL") or "https://testnet.binancefuture.com").rstrip("/")
+        self.base_url = (
+            base_url
+            or os.getenv("BINANCE_BASE_URL")
+            or "https://testnet.binancefuture.com"
+        ).rstrip("/")
         self.timeout = timeout
 
         if not self.api_key or not self.api_secret:
             raise ValueError(
-                "Missing Binance API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET in .env or environment variables."
+                "Missing Binance API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET."
             )
 
         self.session = requests.Session()
         self.session.headers.update({"X-MBX-APIKEY": self.api_key})
+
+    def get_server_time(self) -> int:
+        """Fetch Binance server time to avoid local clock drift issues."""
+        try:
+            response = self.session.get(
+                f"{self.base_url}/fapi/v1/time",
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            return response.json()["serverTime"]
+        except requests.exceptions.RequestException as exc:
+            logger.exception("Failed to fetch server time")
+            raise NetworkError(f"Failed to get server time: {exc}") from exc
 
     def _sign_params(self, params: dict[str, Any]) -> str:
         query_string = urlencode(params, doseq=True)
@@ -50,18 +66,29 @@ class BinanceFuturesClient:
         ).hexdigest()
         return f"{query_string}&signature={signature}"
 
-    def _request(self, method: str, path: str, signed: bool = False, params: dict[str, Any] | None = None) -> dict[str, Any]:
+    def _request(
+        self,
+        method: str,
+        path: str,
+        signed: bool = False,
+        params: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
         params = params or {}
         url = f"{self.base_url}{path}"
 
         if signed:
-            params["timestamp"] = int(time.time() * 1000)
-            params.setdefault("recvWindow", 5000)
+            params["timestamp"] = self.get_server_time()
+            params.setdefault("recvWindow", 10000)
             payload = self._sign_params(params)
         else:
             payload = urlencode(params, doseq=True)
 
-        logger.info("API request | method=%s | url=%s | payload=%s", method, url, payload)
+        logger.info(
+            "API request | method=%s | url=%s | payload=%s",
+            method,
+            url,
+            payload,
+        )
 
         try:
             upper_method = method.upper()
@@ -77,13 +104,17 @@ class BinanceFuturesClient:
             raise NetworkError(f"Network error: {exc}") from exc
 
         text = response.text
-        logger.info("API response | status_code=%s | body=%s", response.status_code, text)
+        logger.info(
+            "API response | status_code=%s | body=%s",
+            response.status_code,
+            text,
+        )
 
         try:
             data = response.json()
         except ValueError as exc:
             logger.exception("Failed to parse JSON response")
-            raise BinanceAPIError(f"Non-JSON response from Binance: {text}") from exc
+            raise BinanceAPIError(f"Non-JSON response: {text}") from exc
 
         if response.status_code >= 400:
             code = data.get("code", "UNKNOWN")
@@ -93,10 +124,14 @@ class BinanceFuturesClient:
         return data
 
     def ping(self) -> dict[str, Any]:
-        return self._request("GET", "/fapi/v1/ping", signed=False)
+        return self._request("GET", "/fapi/v1/ping")
 
     def create_order(self, params: dict[str, Any]) -> dict[str, Any]:
         return self._request("POST", "/fapi/v1/order", signed=True, params=params)
+
+    def create_test_order(self, params: dict[str, Any]) -> dict[str, Any]:
+        """Submit a Binance test order that validates request without execution."""
+        return self._request("POST", "/fapi/v1/order/test", signed=True, params=params)
 
     def get_order(self, symbol: str, order_id: int) -> dict[str, Any]:
         return self._request(

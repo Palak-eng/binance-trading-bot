@@ -15,26 +15,41 @@ logger = logging.getLogger(__name__)
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Place Binance Futures Testnet orders from the CLI")
+    parser = argparse.ArgumentParser(
+        description="Place Binance Futures Testnet orders from the CLI"
+    )
     parser.add_argument("--symbol", required=True, help="Trading symbol, e.g. BTCUSDT")
     parser.add_argument("--side", required=True, help="BUY or SELL")
     parser.add_argument("--type", required=True, dest="order_type", help="MARKET or LIMIT")
     parser.add_argument("--quantity", required=True, help="Order quantity, e.g. 0.001")
     parser.add_argument("--price", help="Required for LIMIT orders")
+    parser.add_argument(
+        "--test",
+        action="store_true",
+        help="Use Binance test endpoint (order will NOT be executed)",
+    )
     return parser.parse_args()
 
 
-def print_order_summary(validated_input: dict[str, str]) -> None:
+def print_order_summary(validated_input: dict[str, str], test: bool) -> None:
     print("\n=== ORDER REQUEST SUMMARY ===")
     print(f"Symbol      : {validated_input['symbol']}")
     print(f"Side        : {validated_input['side']}")
     print(f"Order Type  : {validated_input['type']}")
     print(f"Quantity    : {validated_input['quantity']}")
     print(f"Price       : {validated_input.get('price', 'N/A')}")
+    print(f"Mode        : {'TEST (no execution)' if test else 'LIVE TESTNET'}")
 
 
 def print_order_response(response: dict) -> None:
     print("\n=== ORDER RESPONSE ===")
+
+    if "message" in response:
+        print(response["message"])
+        print("\nPayload:")
+        print(pformat(response.get("payload")))
+        return
+
     print(f"Order ID    : {response.get('orderId', 'N/A')}")
     print(f"Status      : {response.get('status', 'N/A')}")
     print(f"Executed Qty: {response.get('executedQty', 'N/A')}")
@@ -55,12 +70,15 @@ def main() -> int:
             quantity=args.quantity,
             price=args.price,
         )
-        print_order_summary(validated_input)
+
+        print_order_summary(validated_input, args.test)
 
         client = BinanceFuturesClient()
         logger.info("Validated order payload: %s", build_order_payload(validated_input))
-        response = place_order(client, validated_input)
+
+        response = place_order(client, validated_input, test=args.test)
         print_order_response(response)
+
         print(f"\nSUCCESS: Order submitted successfully. Log file: {log_path}")
         return 0
 
